@@ -1,3 +1,34 @@
+// Notes ko LocalStorage mein save karne ke liye
+function saveNote() {
+    const input = document.getElementById('noteInput');
+    const list = document.getElementById('notesList');
+
+    if (input.value.trim() !== "") {
+        const li = document.createElement('li');
+        li.textContent = "✨ " + input.value;
+        li.style.padding = "10px";
+        li.style.borderBottom = "1px solid #333";
+        list.appendChild(li);
+
+        // Phone ki memory mein save karein
+        let notes = JSON.parse(localStorage.getItem('my_notes')) || [];
+        notes.push(input.value);
+        localStorage.setItem('my_notes', JSON.stringify(notes));
+
+        input.value = ""; // Box khali karein
+    }
+}
+
+// Page load hote hi purane notes dikhayein
+window.onload = () => {
+    let notes = JSON.parse(localStorage.getItem('my_notes')) || [];
+    const list = document.getElementById('notesList');
+    notes.forEach(note => {
+        const li = document.createElement('li');
+        li.textContent = "✨ " + note;
+        list.appendChild(li);
+    });
+};
 // NOTES
 const noteInput = document.getElementById("noteInput");
 const notesList = document.getElementById("notesList");
