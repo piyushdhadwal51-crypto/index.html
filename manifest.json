@@ -1,0 +1,15 @@
+{
+  "short_name": "GenZ Space",
+  "name": "Aesthetic Organizer",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3659/3659899.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0f0f14",
+  "background_color": "#0f0f14"
+}
