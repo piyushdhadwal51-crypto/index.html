@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GenZ Organizer</title>
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<h1>✨ GenZ Organizer</h1>
+
+<section>
+  <h2>📝 Notes</h2>
+  <textarea id="noteInput"></textarea>
+  <button onclick="saveNote()">Save</button>
+  <ul id="notesList"></ul>
+</section>
+
+<section>
+  <h2>📸 Photos</h2>
+  <input type="file" id="photoInput">
+  <button onclick="savePhoto()">Add</button>
+  <div id="photoGallery"></div>
+</section>
+
+<section>
+  <h2>🎵 Songs</h2>
+  <input type="file" id="audioInput">
+  <button onclick="saveAudio()">Add</button>
+  <div id="audioList"></div>
+</section>
+
+<section>
+  <h2>⏰ Reminders</h2>
+  <input type="datetime-local" id="reminderInput">
+  <button onclick="saveReminder()">Set</button>
+  <ul id="reminderList"></ul>
+</section>
+
+<script src="app.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js");
+}
+</script>
+
+</body>
+</html>
